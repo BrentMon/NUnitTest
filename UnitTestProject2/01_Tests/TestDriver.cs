@@ -69,15 +69,8 @@ namespace UnitTestProject2
        //  {
              
           myclass.BuildAComputer_Action();
-       
-             //[Test]
-       //public void A2_AmazonPurchase()
-       // {
-            //myclass.LaunchIE();
-            
-            //myclass.CloseIE();
 
-       //}
+
       //   }
   }
 

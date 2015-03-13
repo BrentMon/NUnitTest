@@ -59,10 +59,9 @@ namespace UnitTestProject2
             try
             {
                 Assert.AreEqual(DataSheet.sCartItemArray, DataSheet.sProductArray);
-
             }
             catch (AssertionException ex)
-            {               
+            {
                 System.Console.WriteLine(ex.Message);
             }
             
