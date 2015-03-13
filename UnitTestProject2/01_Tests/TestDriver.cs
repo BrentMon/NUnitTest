@@ -65,8 +65,8 @@ namespace UnitTestProject2
       [Test]
        public void AmazonTest(){
 
-         for(int i = 1; i == 4; i++)
-         {
+        // for(int i = 1; i == 4; i++)
+       //  {
              
           myclass.BuildAComputer_Action();
        
@@ -78,7 +78,7 @@ namespace UnitTestProject2
             //myclass.CloseIE();
 
        //}
-         }
+      //   }
   }
 
  //       [Test]

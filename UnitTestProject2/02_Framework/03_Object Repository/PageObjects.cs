@@ -89,11 +89,12 @@ namespace UnitTestProject2
                     //set the no thanks button to null for the next item
                     //ProductPage.wProtectionNoThanks(driver).Equals(null);
                 }
-                catch (NoSuchElementException)
+                catch (NoSuchElementException ex)
                 {
                     //ProductPage.wAddToCartButton(driver).Click();
                     string exception = "The Protection Plan popup did not display";
                     System.Console.WriteLine(exception);
+                    System.Console.WriteLine(ex.Message);
                 }
             }
 

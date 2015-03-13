@@ -29,7 +29,7 @@ namespace UnitTestProject2
 
         public void BuildAComputer_Action()
         {
-            int x;
+           // int x;
 
             //AmazonObjects.mAmazonHomePage(driver);
 
@@ -50,19 +50,21 @@ namespace UnitTestProject2
                //sCartItemArray = CartPage.mGetCartItems(driver, sProductArray);
                CartPage.mGetCartItems(driver, DataSheet.sProductArray).CopyTo(DataSheet.sCartItemArray, 0);
             }
-            catch (NullReferenceException)
+            catch (NullReferenceException ex)
             {
-                System.Console.WriteLine("threw exception, null reference for ");
+                System.Console.WriteLine(ex.Message);
             };
 
 
-            //Assert that all the items are the same
-            x = 0;
-            foreach (string item in DataSheet.sProductArray)
+            try
             {
-              Assert.AreEqual(DataSheet.sCartItemArray[x], item);
-              x = x + 1;
-            };
+                Assert.AreEqual(DataSheet.sCartItemArray, DataSheet.sProductArray);
+
+            }
+            catch (AssertionException ex)
+            {               
+                System.Console.WriteLine(ex.Message);
+            }
             
 
         }//End Build a computer
