@@ -63,13 +63,22 @@ namespace UnitTestProject2
         }
 
       [Test]
+        [ExpectedException()]
        public void AmazonTest(){
 
         // for(int i = 1; i == 4; i++)
        //  {
              
           myclass.BuildAComputer_Action();
-
+          try
+          {
+              Assert.AreEqual(DataSheet.sCartItemArray, DataSheet.sProductArray);
+          }
+          catch (AssertionException ex)
+          {
+          //    System.Console.WriteLine(ex.Message);
+              throw new AssertionException(ex.Message);
+          }
 
       //   }
   }
