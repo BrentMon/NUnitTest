@@ -49,46 +49,57 @@ namespace UnitTestProject2
 
 
 
- //       [Test]
- //      public void A1_Begin()
-//      {
-//          myclass.LaunchIE();
-//      }
-
-        
-        public void A3_AmazonPurchase()
+     // [Test]
+        public void Test1()
         {
-            myclass.LaunchIE();
-            myclass.ClearCart_Action();        
+           myclass.getComputer_Action();
+
+          // try
+          // {
+               Assert.AreEqual(DataSheet.sCartItemArray, DataSheet.sProductArray);
+          // }
+         //  catch (AssertionException ex)
+         //  {
+               //    System.Console.WriteLine(ex.Message);
+            //   throw new AssertionException(ex.Message);
+         //  }
+
         }
 
       [Test]
-        [ExpectedException()]
-       public void AmazonTest(){
+      public void Test2()
+      {
+          
+          myclass.getCartTotal_Action();
 
-        // for(int i = 1; i == 4; i++)
-       //  {
-             
-          myclass.BuildAComputer_Action();
+          double val1 = DataSheet.dPrice;
+
+          myclass.getComputer_Action();
+
+          myclass.getCartTotal_Action();
+
+          double val2 = DataSheet.dPrice;
+
           try
           {
-              Assert.AreEqual(DataSheet.sCartItemArray, DataSheet.sProductArray);
+              Assert.Less(val1, val2);
           }
-          catch (AssertionException ex)
+          catch (AssertionException)
           {
-          //    System.Console.WriteLine(ex.Message);
-              throw new AssertionException(ex.Message);
+              throw new AssertionException("Value 1 was not less than or equal to value 2. \nThe Cart value did not go up");
+
+              //System.Console.WriteLine(ex.Message);
+              //throw new AssertionException(ex.Message);
           }
+      }
 
-      //   }
-  }
+     // [Test]
+      public void Test3()
+      {
+          myclass.getCartPage_Action();
+ 
 
- //       [Test]
- //       public void A3_End()
-//        {
- //           myclass.CloseIE();
- //       }
-        
+      }   
     
 
     }

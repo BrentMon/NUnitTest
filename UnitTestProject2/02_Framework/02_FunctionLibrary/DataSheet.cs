@@ -24,12 +24,21 @@ namespace UnitTestProject2
      };
 
      public static string[] sProductArray;
+     public static string sProductArrayCurrent;
 
      public static string[] sCartItemArray;
 
-        
-         
+     public static char[] cDollarSign(IWebDriver driver)
+     {
+         char[] cDollarSign = new char[]
+            {
+                '$'
+            };
 
+         return cDollarSign;
+     }
+
+     public static double dPrice;
 
     }
 }
