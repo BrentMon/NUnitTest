@@ -10,9 +10,10 @@ using OpenQA.Selenium.Support.UI;
 
 namespace UnitTestProject2
 {
-  public class ReusableActions
+  class ReusableActions
    {
       IWebDriver driver;
+      //static double dPrice;
 
        public void LaunchIE()
         {
@@ -27,11 +28,11 @@ namespace UnitTestProject2
            driver.Quit();
         }
 
-        public void BuildAComputer_Action()
-        {
-           // int x;
 
-            //AmazonObjects.mAmazonHomePage(driver);
+
+        public void buildComputer_Action()
+        {
+            AmazonObjects.mAmazonHomePage(driver);
 
             //create a product array that is the same size as the items aray
             DataSheet.sProductArray = new string[DataSheet.sItemsArray.Length];
@@ -47,40 +48,45 @@ namespace UnitTestProject2
 
             try
             {
-               //sCartItemArray = CartPage.mGetCartItems(driver, sProductArray);
                CartPage.mGetCartItems(driver, DataSheet.sProductArray).CopyTo(DataSheet.sCartItemArray, 0);
             }
             catch (NullReferenceException ex)
             {
                 System.Console.WriteLine(ex.Message);
             };
-
-
-            //try
-            //{
-            //    Assert.AreEqual(DataSheet.sCartItemArray, DataSheet.sProductArray);
-            //}
-            //catch (AssertionException ex)
-            //{
-            //    System.Console.WriteLine(ex.Message);
-            //    throw new AssertionException ("asdf");
-            //}
-            
-
+ 
         }//End Build a computer
 
-  
 
 
 
 
-      public void ClearCart_Action()
+
+       public void getCartTotal_Action()
         {
-            CartPage.mRemoveFromCart(driver);
+            DataSheet.dPrice = CartPage.dCartPrice(driver);
+            
+            System.Console.WriteLine("Cart Total = " + DataSheet.dPrice);
 
-        }// End Clear Cart
+        }// End getCartTotal_Action
 
 
-    }//End Amazon
+
+       public void getCartPage_Action()
+        {
+            //AmazonObjects.wCartButton(driver).Click();
+            driver.Navigate().GoToUrl(CartPage.sCartPageURL);
+        }//end get cart page
+
+
+       public void getCartManipuation_Action()
+      {
+          DataSheet.dPrice = DataSheet.dPrice + 2;
+
+          
+
+      }// End getCartTotal_Action
+
+    }//End Class Reusable action
 
 }//End Namespace

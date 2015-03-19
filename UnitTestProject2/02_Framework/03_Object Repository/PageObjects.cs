@@ -30,13 +30,13 @@ namespace UnitTestProject2
 
         public static void mAmazonHomePage(IWebDriver driver)
         {
-            if (HomePage.sHomeTitle().Equals(driver.Title))
+            if (HomePage.sHomeTitle().Equals(driver.Title.ToString()))
             {
-                System.Console.WriteLine("Are are on the home page, lets begin");
+                System.Console.WriteLine("You are on the home page, lets begin");
             }
             else
             {
-                System.Console.WriteLine("Are were not on the home page, going there now");
+                System.Console.WriteLine("You were not on the home page, going there now");
                 driver.Navigate().GoToUrl("http://www.amazon.com");
             }
         }
@@ -84,17 +84,19 @@ namespace UnitTestProject2
             public static void mAddToCartWithPopup(IWebDriver driver)    {
                 try
                 {
+                    System.Threading.Thread.Sleep(1000);
                     ProductPage.wAddToCartButton(driver).Click();
-                    ProductPage.wProtectionPopup.wProtectionNoThanks(driver).Click();
+                    System.Threading.Thread.Sleep(1000);
+                    ProductPage.ProtectionPopup.wProtectionNoThanks(driver).Click();
                     //set the no thanks button to null for the next item
                     //ProductPage.wProtectionNoThanks(driver).Equals(null);
                 }
-                catch (NoSuchElementException ex)
+                catch (NoSuchElementException)
                 {
                     //ProductPage.wAddToCartButton(driver).Click();
                     string exception = "The Protection Plan popup did not display";
-                    System.Console.WriteLine(exception);
-                    System.Console.WriteLine(ex.Message);
+                    System.Console.WriteLine(exception + " for " + DataSheet.sProductArrayCurrent);
+                   // System.Console.WriteLine(ex.Message);
                 }
             }
 
@@ -109,7 +111,8 @@ namespace UnitTestProject2
 
                    //find the product title web element and give the current index of product array the same value as the curent product title
                    DataSheet.sProductArray[i] = ProductPage.wProductTitle(driver).Text;
-                
+                   DataSheet.sProductArrayCurrent = DataSheet.sProductArray[i];
+
                    //call the mAddToCart method to add the item to our cart. 
                    ProductPage.mAddToCartWithPopup(driver);
                  
@@ -118,7 +121,7 @@ namespace UnitTestProject2
               }
            }
 
-            public static class wProtectionPopup
+            public static class ProtectionPopup
             {
                 public static IWebElement wProtectionNoThanks(IWebDriver driver)    {
                     By bProtectionNoThanksLocator = By.Id("siNoCoverage-announce");
@@ -132,6 +135,8 @@ namespace UnitTestProject2
 
     class CartPage
     {
+        public static string sCartPageURL = "http://www.amazon.com/gp/cart/view.html/ref=nav_cart";
+
         public static IWebElement wProductTitle (IWebDriver driver) {
             By bProductLocator = By.Id("productTitle");
             IWebElement wProductTitle = driver.FindElement(bProductLocator);
@@ -166,12 +171,14 @@ namespace UnitTestProject2
             return mGetCartItems;
         }
 
-        public static string sProductTitle (IWebDriver driver)  {
+        public static string sProductTitle (IWebDriver driver)  
+        {
             string sProductTitle = CartPage.wProductTitle(driver).Text;
             return sProductTitle;
         }
 
-        public static IWebElement wCartDeleteButton(IWebDriver driver)   {
+        public static IWebElement wCartDeleteButton(IWebDriver driver)   
+        {
             By bDelete = By.LinkText("");
             By bDeleteButtonLocator = By.Name("submit.delete.");
             IWebElement wCartDeleteButton = driver.FindElement(bDeleteButtonLocator);
@@ -182,6 +189,41 @@ namespace UnitTestProject2
         {
             CartPage.wCartDeleteButton(driver).Click();
         }
+
+        public static IWebElement wCartPrice(IWebDriver driver)
+        {
+            By bCartPriceLocator = By.ClassName("sc-price-sign");
+            IWebElement wCartPrice = driver.FindElement(bCartPriceLocator);
+            return wCartPrice;
+        }
+       
+       public static string sCartPrice (IWebDriver driver)
+       {
+            string sCartPrice = CartPage.wCartPrice(driver).Text;
+            sCartPrice = sCartPrice.TrimStart(DataSheet.cDollarSign());
+            return sCartPrice;
+       }
+
+       public static double dCartPrice(IWebDriver driver)
+       {
+           try
+           {
+               double dCartPrice = Convert.ToDouble(CartPage.sCartPrice(driver));
+               return dCartPrice;
+           }
+           catch (NoSuchElementException ex)
+           {
+               System.Console.WriteLine(ex.Message);
+ 
+               driver.Navigate().GoToUrl(CartPage.sCartPageURL);  
+               double dCartPrice = Convert.ToDouble(CartPage.sCartPrice(driver));
+
+               return dCartPrice;
+           }
+          
+       }
+
+
 
 
     }
