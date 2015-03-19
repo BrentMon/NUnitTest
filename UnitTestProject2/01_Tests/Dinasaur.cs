@@ -9,7 +9,6 @@ using NUnit.Framework;
 
 namespace UnitTestProject2._01_Tests
 {
-    [TestFixture]
     class Dinasaur
     {
             [Test]

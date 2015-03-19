@@ -7,7 +7,6 @@ using NUnit.Core;
 using OpenQA.Selenium;
 using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Support.UI;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 
@@ -74,21 +73,17 @@ namespace UnitTestProject2
 
   
 
-         // [Suite]
-            public static ICollection<Test> asdf()
+            [Suite]
+            public static Collection<Test> asdf
             {
-                //get
-                //{
-                    
+                get
+                {
+                    TestRepository mysuite = new TestRepository();
                    //TestDriverClass asdf = new TestDriverClass();
                     Collection<Test> asdf = new Collection<Test>();
-                   // asdf.Add(Tes);
-                    // IEnumerator 
-                   // ICollection<string> joij = new ICollection<string>();
-                 //   joij.Add(new TestDriverClass());
                     
                     return asdf;
-                //}
+                }
             }
 
 
