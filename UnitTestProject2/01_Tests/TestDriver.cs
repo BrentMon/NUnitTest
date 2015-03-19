@@ -54,7 +54,7 @@ namespace UnitTestProject2
         //the [testfixture] class will execute its [setup] method once before EACH test and [teardown] methond once after EACH test.
         //the [testfixture] class is required for NUnit to identify [test] or [testcase] methods
         [TestFixture]
-        public class TestDriverClass
+        public class TestDriver
         {
 
             [SetUp]
@@ -70,21 +70,15 @@ namespace UnitTestProject2
             }
 
 
-
+            
   
-
-            [Suite]
-            public static Collection<Test> asdf
+            [Test]
+            [Category("Dino")]
+            public static void DinoTests()
             {
-                get
-                {
-                    TestRepository mysuite = new TestRepository();
-                   //TestDriverClass asdf = new TestDriverClass();
-                    Collection<Test> asdf = new Collection<Test>();
-                    
-                    return asdf;
-                }
+
             }
+  
 
 
 

@@ -9,6 +9,8 @@ using NUnit.Framework;
 
 namespace UnitTestProject2
 {
+    [TestFixture]
+    [Category("Dino")]
     class Dinasaur
     {
             //[Test]
