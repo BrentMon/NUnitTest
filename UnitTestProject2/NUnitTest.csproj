@@ -83,6 +83,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="01_Tests\Dinasaur.cs" />
+    <Compile Include="01_Tests\TestRepository.cs" />
     <Compile Include="02_Framework\03_Object Repository\PageObjects.cs" />
     <Compile Include="02_Framework\01_ReusableActions\ReusableActions.cs" />
     <Compile Include="02_Framework\02_FunctionLibrary\DataSheet.cs" />

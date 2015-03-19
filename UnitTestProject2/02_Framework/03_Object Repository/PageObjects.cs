@@ -200,7 +200,7 @@ namespace UnitTestProject2
        public static string sCartPrice (IWebDriver driver)
        {
             string sCartPrice = CartPage.wCartPrice(driver).Text;
-            sCartPrice = sCartPrice.TrimStart(DataSheet.cDollarSign(driver));
+            sCartPrice = sCartPrice.TrimStart(DataSheet.cDollarSign());
             return sCartPrice;
        }
 

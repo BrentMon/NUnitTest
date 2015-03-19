@@ -30,7 +30,7 @@ namespace UnitTestProject2
 
 
 
-        public void getComputer_Action()
+       public void buildComputer_Action()
         {
             AmazonObjects.mAmazonHomePage(driver);
 
@@ -62,7 +62,7 @@ namespace UnitTestProject2
 
 
 
-        public void getCartTotal_Action()
+       public void getCartTotal_Action()
         {
             DataSheet.dPrice = CartPage.dCartPrice(driver);
             
@@ -72,12 +72,20 @@ namespace UnitTestProject2
 
 
 
-      public void getCartPage_Action()
+       public void getCartPage_Action()
         {
             //AmazonObjects.wCartButton(driver).Click();
             driver.Navigate().GoToUrl(CartPage.sCartPageURL);
         }//end get cart page
 
+
+       public void getCartManipuation_Action()
+      {
+          DataSheet.dPrice = DataSheet.dPrice + 2;
+
+          
+
+      }// End getCartTotal_Action
 
     }//End Class Reusable action
 
