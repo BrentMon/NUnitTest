@@ -7,11 +7,11 @@ using System.Collections.ObjectModel;
 using NUnit.Framework;
 
 
-namespace UnitTestProject2._01_Tests
+namespace UnitTestProject2
 {
     class Dinasaur
     {
-            [Test]
+            //[Test]
             public static void Dino()
     {
         Collection<string> dinosaurs = new Collection<string>();

@@ -25,7 +25,7 @@ namespace UnitTestProject2
     public class FrameworkInitilization
     {
         //declaring my class as static makes it accessable to the [testfixture] class and it's methods
-        static ReusableActions myclass = new ReusableActions();
+        //static TestRepository myclass = new TestRepository();
 
         //Init the driver? I have mine init inside of Reusable Actions class and created inside of the [testsetupfixture's setup] method
         //init the framework (configure tool, connect to databases, import parameters)

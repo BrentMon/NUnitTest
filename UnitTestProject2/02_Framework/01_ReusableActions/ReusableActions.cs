@@ -30,7 +30,7 @@ namespace UnitTestProject2
 
 
 
-       public void buildComputer_Action()
+        public void buildComputer_Action()
         {
             AmazonObjects.mAmazonHomePage(driver);
 
