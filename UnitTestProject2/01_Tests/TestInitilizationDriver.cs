@@ -20,12 +20,12 @@ namespace UnitTestProject2
     //    - the full set of steps (wrapper functions) equals the test case
 
     //the [setupfixture] class will execute the [setup] method once before the  tests and [teardown] methond once after tests have completed.
-    //you only need one [setupfixture] in your solution. NUnit will find it no matter what .cs file is in and run it first. 
+    //you only need one [setupfixture] in your solution. NUnit will find it no matter what .cs file is in and run it first. (a setupfixture is not required)
     //Hoever, you can have multiple [setupfixtures]. I'm not sure yet the order it chooses to run each [setupfixture].
     [SetUpFixture]
     public class FrameworkInitilization
     {
-        //declaring my class as static makes it accessable to the [testfixture] class and it's methods
+        //declaring my driver as static makes it accessable to the [testfixture] class and it's methods
         //static TestRepository testrepository = new TestRepository();
         //static ReusableActions BrowserInitilization = new ReusableActions();
         public static IWebDriver driver;
@@ -58,9 +58,12 @@ namespace UnitTestProject2
         }
 
         //the [testfixture] class will execute its [setup] method once before EACH test and [teardown] methond once after EACH test.
-        //the [testfixture] class is required for NUnit to identify [test] or [testcase] methods
+        //the [testfixture] class is required for NUnit to identify [test] or [testcase] methods (a testfixture is not actually a requirement)
         //NUnit will only run the [testfixture] class [setup] and [teardown] for the [test]s in the SAME class. 
         //So for example, my TestSet_Amazon class's [testfixture] will only run before the [test] methods in the TestSet_Amazon class.
+        //Categories can be used with [test] or [testfixtures]. if it is used with a [testfixture] then all of the [test] methods within that...
+        //class will inherit the category...
+        //if it is used with a [test] then only that [test] methods with that category will belong to the category.
         [TestFixture]
         [Category("Full Suite")]
         public class TestDriver
