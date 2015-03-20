@@ -83,12 +83,12 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="02_Framework\01_ReusableActions\Dinasaur.cs" />
-    <Compile Include="01_Tests\TestRepository.cs" />
+    <Compile Include="01_Tests\TestSet_Dinasaur.cs" />
+    <Compile Include="01_Tests\TestSet_Amazon.cs" />
     <Compile Include="02_Framework\03_Object Repository\PageObjects.cs" />
     <Compile Include="02_Framework\01_ReusableActions\ReusableActions.cs" />
     <Compile Include="02_Framework\02_FunctionLibrary\DataSheet.cs" />
-    <Compile Include="01_Tests\TestDriver.cs" />
+    <Compile Include="01_Tests\TestInitilizationDriver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

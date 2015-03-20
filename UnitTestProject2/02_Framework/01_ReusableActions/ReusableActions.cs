@@ -12,25 +12,9 @@ namespace UnitTestProject2
 {
   class ReusableActions
    {
-      IWebDriver driver;
-      //static double dPrice;
-
-       public void LaunchIE()
-        {
-            //create a new IE instance
-           driver = new InternetExplorerDriver();
-           driver.Navigate().GoToUrl("http://www.amazon.com");
-       }
-
-       public void CloseIE()
-        {
-            //Close the current IE instance
-           driver.Quit();
-        }
 
 
-
-        public void buildComputer_Action()
+        public void buildComputer_Action(IWebDriver driver)
         {
             AmazonObjects.mAmazonHomePage(driver);
 
@@ -62,7 +46,7 @@ namespace UnitTestProject2
 
 
 
-       public void getCartTotal_Action()
+        public void getCartTotal_Action(IWebDriver driver)
         {
             DataSheet.dPrice = CartPage.dCartPrice(driver);
             
@@ -72,18 +56,16 @@ namespace UnitTestProject2
 
 
 
-       public void getCartPage_Action()
+        public void getCartPage_Action(IWebDriver driver)
         {
             //AmazonObjects.wCartButton(driver).Click();
             driver.Navigate().GoToUrl(CartPage.sCartPageURL);
         }//end get cart page
 
 
-       public void getCartManipuation_Action()
+       public void getCartManipuation_Action(IWebDriver driver)
       {
           DataSheet.dPrice = DataSheet.dPrice + 2;
-
-          
 
       }// End getCartTotal_Action
 
