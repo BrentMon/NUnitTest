@@ -20,8 +20,8 @@ namespace UnitTestProject2
     //    - the full set of steps (wrapper functions) equals the test case
 
     //the [setupfixture] class will execute the [setup] method once before the  tests and [teardown] methond once after tests have completed.
-    // you only need 1 [setupfixture] in your solution. NUnit will find it no matter what .cs file is in and run it first. 
-    //You can have multiple [setupfixtures]. I'm not sure yet the order it chooses to run each [setupfixture].
+    //you only need one [setupfixture] in your solution. NUnit will find it no matter what .cs file is in and run it first. 
+    //Hoever, you can have multiple [setupfixtures]. I'm not sure yet the order it chooses to run each [setupfixture].
     [SetUpFixture]
     public class FrameworkInitilization
     {
@@ -31,7 +31,7 @@ namespace UnitTestProject2
         public static IWebDriver driver;
 
 
-        //Init the driver? I have mine init inside of Reusable Actions class and created inside of the [testsetupfixture's setup] method
+        //Init the driver? I have mine init inside of FrameworkInitilization class and created inside of the [testsetupfixture's setup] method
         //init the framework (configure tool, connect to databases, import parameters)
         //initEnvironment
         //GetAndSetEnvironmentTestSet
