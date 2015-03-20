@@ -5,6 +5,7 @@ using System.Text;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.IE;
+using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 
 
@@ -44,17 +45,16 @@ namespace UnitTestProject2
         public void Setup()
         {
             //create a new IE instance
-        //    myclass.LaunchIE();
-         //   driver = new InternetExplorerDriver();
-          //  driver.Navigate().GoToUrl("http://www.amazon.com");
+            //driver = new InternetExplorerDriver();
+            driver = new ChromeDriver();
+            driver.Navigate().GoToUrl("http://www.amazon.com");
         }
 
         [TearDown]
         public void TearDown()
         {
             //Close the current IE instance
-         //   myclass.CloseIE();
-         //   driver.Quit();
+            driver.Quit();
         }
 
         //the [testfixture] class will execute its [setup] method once before EACH test and [teardown] methond once after EACH test.
