@@ -77,9 +77,9 @@ namespace UnitTestProject2
 
                 double val1 = DataSheet.dPrice;
 
-                // Amazon.buildComputer_Action();
+                Amazon.buildComputer_Action(driver);
 
-                //  Amazon.getCartTotal_Action();
+                Amazon.getCartTotal_Action(driver);
 
                 double val2 = DataSheet.dPrice;
 

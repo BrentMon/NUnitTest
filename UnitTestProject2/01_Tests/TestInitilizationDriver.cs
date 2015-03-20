@@ -19,6 +19,10 @@ namespace UnitTestProject2
     //    - do these steps (case staements -> page object model: each page feature has its own case based on the expected outcome)
     //    - the full set of steps (wrapper functions) equals the test case
 
+    //NUnit flow
+    //  SetupFixture > SetUp(within SetUpFixture) > TestFixture > SetUp(within TestFixture) > Test/TestCase 1 > TearDown(within TestFixture) > SetUp(within TestFixture) > Test/TestCase 2 > TearDown SetUp(within TestFixture)  > TearDown (within SetUpFixture) > End
+
+
     //the [setupfixture] class will execute the [setup] method once before the  tests and [teardown] methond once after tests have completed.
     //you only need one [setupfixture] in your solution. NUnit will find it no matter what .cs file is in and run it first. (a setupfixture is not required)
     //Hoever, you can have multiple [setupfixtures]. I'm not sure yet the order it chooses to run each [setupfixture].
@@ -91,7 +95,7 @@ namespace UnitTestProject2
 
             
   
-            [Test]
+           // [Test]
             [Category("Null")]
             public static void AllDinoTests()
             {
@@ -102,7 +106,7 @@ namespace UnitTestProject2
                 
             }
 
-            //[Test]
+            [Test]
             [Category("Null")]
             public static void AllAmazonTests()
             {
