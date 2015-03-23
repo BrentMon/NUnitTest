@@ -121,7 +121,7 @@ namespace UnitTestProject2
             [Test, Category("Dino"), Description("my Dinasaur tests")]
             public void Test5()
             {
-                TestRepository_Dino.TestSet_Dinasaur mydino = new TestRepository_Dino.TestSet_Dinasaur();
+                TestRepository_Dino.TestSet_Dinosaur mydino = new TestRepository_Dino.TestSet_Dinosaur();
                 mydino.Dino1();
 
 

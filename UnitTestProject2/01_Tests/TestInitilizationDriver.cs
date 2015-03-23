@@ -101,7 +101,7 @@ namespace UnitTestProject2
             {
                 System.Console.WriteLine("Dino Driver GO!!");
                 
-                TestRepository_Dino.TestSet_Dinasaur mydino = new TestRepository_Dino.TestSet_Dinasaur();
+                TestRepository_Dino.TestSet_Dinosaur mydino = new TestRepository_Dino.TestSet_Dinosaur();
                 mydino.Dino1();
                 
             }
