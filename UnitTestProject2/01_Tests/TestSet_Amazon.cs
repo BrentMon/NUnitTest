@@ -54,7 +54,7 @@ namespace UnitTestProject2
             }
 
 
-          //  [Test]
+            [Test]
             public void Test1()
             {
                 Amazon.buildComputer_Action(driver);
@@ -70,7 +70,7 @@ namespace UnitTestProject2
                 }
             }
 
-          //  [Test]
+            [Test]
             public void Test2()
             {
                 Amazon.getCartTotal_Action(driver);
@@ -98,9 +98,9 @@ namespace UnitTestProject2
 
 
 
-            // [TestCase(2, 3, Result = 5)]
-            //  [TestCase(2, 3, Result = 2)]
-            // [TestCase(2, 3, Result = 6)]
+            [TestCase(2, 3, Result = 5)]
+            [TestCase(2, 3, Result = 2)]
+            [TestCase(2, 3, Result = 6)]
             public double Test3(int x, int y)
             {
                 //myclass.getCartManipuation_Action();
@@ -109,7 +109,7 @@ namespace UnitTestProject2
                 //myclass.CloseIE();
             }
 
-            //   [Test] [Combinatorial]
+            [Test] [Combinatorial]
             public void Test4(
                 [Values(1, 2)] int x,
                 [Values("gen", "steve")]string name)
@@ -118,7 +118,7 @@ namespace UnitTestProject2
 
             }
 
-         //  [Test, Description("my Dinasaur tests")]
+            [Test, Category("Dino"), Description("my Dinasaur tests")]
             public void Test5()
             {
                 TestRepository_Dino.TestSet_Dinasaur mydino = new TestRepository_Dino.TestSet_Dinasaur();
@@ -127,18 +127,6 @@ namespace UnitTestProject2
 
             }
 
-
-            //[Suite]
-            //public static Collection<NUnitTestMethod> asdf
-            //{
-            //    get
-            //    {
-            //        Collection<NUnitTestMethod> asdf = new Collection<NUnitTestMethod>();
-            //        // asdf.Add(typeof(Te);
-
-            //        return asdf;
-            //    }
-            //}
 
 
 

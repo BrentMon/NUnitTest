@@ -27,7 +27,7 @@ namespace UnitTestProject2
     //you only need one [setupfixture] in your solution. NUnit will find it no matter what .cs file is in and run it first. (a setupfixture is not required)
     //Hoever, you can have multiple [setupfixtures]. I'm not sure yet the order it chooses to run each [setupfixture].
     [SetUpFixture]
-    public class FrameworkInitilization
+    class FrameworkInitilization
     {
         //declaring my driver as static makes it accessable to the [testfixture] class and it's methods
         //static TestRepository testrepository = new TestRepository();
@@ -95,9 +95,9 @@ namespace UnitTestProject2
 
             
   
-           // [Test]
+            [Test]
             [Category("Null")]
-            public static void AllDinoTests()
+            public void AllDinoTests()
             {
                 System.Console.WriteLine("Dino Driver GO!!");
                 
@@ -108,7 +108,7 @@ namespace UnitTestProject2
 
             [Test]
             [Category("Null")]
-            public static void AllAmazonTests()
+            public void AllAmazonTests()
             {
                 System.Console.WriteLine("Amazon Driver GO!!");
                 TestRepository_Amazon.TestSet_Amazon myamazon = new TestRepository_Amazon.TestSet_Amazon();

@@ -48,7 +48,7 @@ namespace UnitTestProject2
             }
 
 
-               // [Test]
+                [Test]
                 public void Dino1()
                 {
                     Collection<string> dinosaurs = new Collection<string>();
