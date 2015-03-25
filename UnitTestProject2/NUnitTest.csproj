@@ -85,9 +85,9 @@
   <ItemGroup>
     <Compile Include="01_Tests\TestSet_Dinosaur.cs" />
     <Compile Include="01_Tests\TestSet_Amazon.cs" />
-    <Compile Include="02_Framework\03_Object Repository\PageObjects.cs" />
-    <Compile Include="02_Framework\01_ReusableActions\ReusableActions.cs" />
-    <Compile Include="02_Framework\02_FunctionLibrary\DataSheet.cs" />
+    <Compile Include="02_PageObjectsAndFeatures\02_Object Repository\PageObjects_Amazon.cs" />
+    <Compile Include="02_PageObjectsAndFeatures\01_ReusableActions\Actions_Amazon.cs" />
+    <Compile Include="02_PageObjectsAndFeatures\03_DataSheet\DataSheet.cs" />
     <Compile Include="01_Tests\TestInitilizationDriver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
