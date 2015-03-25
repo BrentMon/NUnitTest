@@ -84,9 +84,9 @@ namespace UnitTestProject2
             public static void mAddToCartWithPopup(IWebDriver driver)    {
                 try
                 {
-                    System.Threading.Thread.Sleep(1000);
+                    //System.Threading.Thread.Sleep(1000);
                     ProductPage.wAddToCartButton(driver).Click();
-                    System.Threading.Thread.Sleep(1000);
+                   // System.Threading.Thread.Sleep(1000);
                     ProductPage.ProtectionPopup.wProtectionNoThanks(driver).Click();
                     //set the no thanks button to null for the next item
                     //ProductPage.wProtectionNoThanks(driver).Equals(null);

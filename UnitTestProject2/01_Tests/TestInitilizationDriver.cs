@@ -51,7 +51,12 @@ namespace UnitTestProject2
             //create a new IE instance
             //driver = new InternetExplorerDriver();
             driver = new ChromeDriver();
+
+            driver.Manage().Timeouts().SetPageLoadTimeout(new TimeSpan(0, 0, 10));
+            driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(0, 0, 10));
+
             driver.Navigate().GoToUrl("http://www.amazon.com");
+
         }
 
         [TearDown]
