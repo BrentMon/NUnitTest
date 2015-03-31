@@ -22,14 +22,13 @@ namespace UnitTestProject2
     //  SetupFixture > SetUp(within SetUpFixture) > TestFixture > SetUp(within TestFixture) > Test/TestCase 1 > TearDown(within TestFixture) > SetUp(within TestFixture) > Test/TestCase 2 > TearDown SetUp(within TestFixture)  > TearDown (within SetUpFixture) > End
 
 
-    //the [setupfixture] class will execute the [setup] method once before the  tests and [teardown] methond once after tests have completed.
-    //you only need one [setupfixture] in your solution. NUnit will find it no matter what .cs file is in and run it first. (a setupfixture is not required)
-    //Hoever, you can have multiple [setupfixtures]. I'm not sure yet the order it chooses to run each [setupfixture].
     //[SetUpFixture]
     class FrameworkInitilization
     {
         private IWebDriver wDriver;
 
+        //class constructor with 1 argument
+        //choose the browser when the initilization class is created
         public FrameworkInitilization (String browser)
         {
             if (browser == "IE" || browser == "ie")
@@ -49,6 +48,8 @@ namespace UnitTestProject2
                  driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(0, 0, 10));
                  driver.Manage().Window.Maximize();
             }
+            
+            //choose chrome if nothing is selcted
             else
             {
                 driver = new ChromeDriver();
@@ -58,6 +59,8 @@ namespace UnitTestProject2
             }      
         }
 
+        //class constructor w/ no arguments
+        //choose chrome if nothing is selcted
         public FrameworkInitilization()
         {
             driver = new ChromeDriver();
@@ -75,28 +78,14 @@ namespace UnitTestProject2
             }
             set
             {
-
                 wDriver = value;
             }
 
         }
 
-
-        //Init the driver? I have mine init inside of FrameworkInitilization class and created inside of the [testsetupfixture's setup] method
-        //init the framework (configure tool, connect to databases, import parameters)
-        //initEnvironment
-        //GetAndSetEnvironmentTestSet
-        //ConfigureTool
-        //initODBCConnections
-        //ImportTestParameters
-        //initController
-        //init data set
-
         //[SetUp]
         public void Setup()
         {
-  
-     
 
         }
 
@@ -106,14 +95,6 @@ namespace UnitTestProject2
 
         }
     }//end class [testsetupfixture] initializeframework
-
-        //the [testfixture] class will execute its [setup] method once before EACH test and [teardown] methond once after EACH test.
-        //the [testfixture] class is required for NUnit to identify [test] or [testcase] methods (a testfixture is not actually a requirement)
-        //NUnit will only run the [testfixture] class [setup] and [teardown] for the [test]s in the SAME class. 
-        //So for example, my TestSet_Amazon class's [testfixture] will only run before the [test] methods in the TestSet_Amazon class.
-        //Categories can be used with [test] or [testfixtures]. if it is used with a [testfixture] then all of the [test] methods within that...
-        //class will inherit the category...
-        //if it is used with a [test] then only that [test] methods with that category will belong to the category.
 
 
 }//end namespace
