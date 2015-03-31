@@ -83,14 +83,12 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="01_Tests\TestSet_Dinosaur.cs" />
     <Compile Include="01_Tests\TestSet_Amazon.cs" />
-    <Compile Include="02_PageObjectsAndFeatures\02_Object Repository\PageObjects_CartPage.cs" />
-    <Compile Include="02_PageObjectsAndFeatures\02_Object Repository\PageObjects_Amazon.cs" />
-    <Compile Include="02_PageObjectsAndFeatures\01_ReusableActions\Actions_Amazon.cs" />
-    <Compile Include="02_PageObjectsAndFeatures\02_Object Repository\PageObjects_HomePage.cs" />
-    <Compile Include="02_PageObjectsAndFeatures\02_Object Repository\PageObjects_ProductPage.cs" />
-    <Compile Include="02_PageObjectsAndFeatures\03_DataSheet\DataSheet.cs" />
+    <Compile Include="02_PageObjectsAndFeatures\01_PageObjects\PageObjects_CartPage.cs" />
+    <Compile Include="02_PageObjectsAndFeatures\01_PageObjects\PageObjects_Amazon.cs" />
+    <Compile Include="02_PageObjectsAndFeatures\01_PageObjects\PageObjects_HomePage.cs" />
+    <Compile Include="02_PageObjectsAndFeatures\01_PageObjects\PageObjects_ProductPage.cs" />
+    <Compile Include="02_PageObjectsAndFeatures\02_DataSheet\DataSheet.cs" />
     <Compile Include="01_Tests\TestInitilizationDriver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
