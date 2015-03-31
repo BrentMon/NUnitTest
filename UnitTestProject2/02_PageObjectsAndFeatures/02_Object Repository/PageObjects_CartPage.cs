@@ -19,6 +19,13 @@ namespace UnitTestProject2
         }
 
         //page functions
+        public void getCartTotal() 
+        {
+            DataSheet.dPrice = dCartPrice();
+            System.Console.WriteLine("Cart Total = " + DataSheet.dPrice);
+        }
+
+
         public string[] sCartItems(string[] items)
         {
             int y = 0;
