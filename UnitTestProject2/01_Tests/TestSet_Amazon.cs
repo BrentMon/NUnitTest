@@ -41,7 +41,7 @@ namespace UnitTestProject2
                 driver.Quit();
             }
 
-      //  [Test]
+        [Test]
         public void Test1()
         {
             //create page objects
@@ -168,8 +168,8 @@ namespace UnitTestProject2
 
 
 
-      //  [Test]
-      //  [Combinatorial]
+       [Test]
+       [Combinatorial]
         public void Test4(
         [Values("IE", "chrome")]string a)
         {
