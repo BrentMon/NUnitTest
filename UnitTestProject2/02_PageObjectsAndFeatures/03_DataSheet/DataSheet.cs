@@ -24,6 +24,7 @@ namespace UnitTestProject2
      };
 
      public static string[] sProductArray;
+
      public static string sProductArrayCurrent;
 
      public static string[] sCartItemArray;

@@ -55,7 +55,6 @@ namespace UnitTestProject2
             }      
         }
 
-
         public FrameworkInitilization()
         {
             driver = new ChromeDriver();
@@ -63,10 +62,7 @@ namespace UnitTestProject2
             driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(0, 0, 10));
             driver.Manage().Window.Maximize();
         }
-        //declaring my driver as static makes it accessable to the [testfixture] class and it's methods
-        //static TestRepository testrepository = new TestRepository();
-        //static ReusableActions BrowserInitilization = new ReusableActions();
-       // private IWebDriver wDriver;
+
         
         //{
         //    get
@@ -95,23 +91,15 @@ namespace UnitTestProject2
         //[SetUp]
         public void Setup()
         {
-           // wDriver = new ChromeDriver();
-            //wDriver.Navigate().GoToUrl("http://www.amazon.com");
-            //create a new IE instance
-            //driver = new InternetExplorerDriver();
-         //  wDriver = new ChromeDriver();
-           //driver.Manage().Timeouts().SetPageLoadTimeout(new TimeSpan(0, 0, 10));
-           //driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(0, 0, 10));
-           //driver.Manage().Window.Maximize();
-       //    
+  
+     
 
         }
 
        // [TearDown]
         public void TearDown()
         {
-            //Close the current IE instance
-          // wDriver.Quit();
+
         }
     }//end class [testsetupfixture] initializeframework
 
