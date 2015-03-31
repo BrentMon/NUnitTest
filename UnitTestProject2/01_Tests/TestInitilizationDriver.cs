@@ -28,21 +28,21 @@ namespace UnitTestProject2
     //[SetUpFixture]
     class FrameworkInitilization
     {
-        public IWebDriver driver;
+        private IWebDriver wDriver;
 
         public FrameworkInitilization (String browser)
         {
-            if (browser == "IE")
+            if (browser == "IE" || browser == "ie")
             {
                 driver = new InternetExplorerDriver();
                 driver.Manage().Timeouts().SetPageLoadTimeout(new TimeSpan(0, 0, 10));
                 driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(0, 0, 10));
                 driver.Manage().Window.Maximize();   
             }
-            if (browser == "firefox")
+            if (browser == "firefox" || browser == "Firefox" || browser == "FireFox")
             {
             }
-            if (browser == "chrome")
+            if (browser == "chrome" || browser == "Chrome")
             {
                  driver = new ChromeDriver();
                  driver.Manage().Timeouts().SetPageLoadTimeout(new TimeSpan(0, 0, 10));
@@ -50,8 +50,11 @@ namespace UnitTestProject2
                  driver.Manage().Window.Maximize();
             }
             else
-            { 
-            
+            {
+                driver = new ChromeDriver();
+                driver.Manage().Timeouts().SetPageLoadTimeout(new TimeSpan(0, 0, 10));
+                driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(0, 0, 10));
+                driver.Manage().Window.Maximize();
             }      
         }
 
@@ -63,19 +66,20 @@ namespace UnitTestProject2
             driver.Manage().Window.Maximize();
         }
 
-        
-        //{
-        //    get
-        //    {
-        //        return wDriver;
-        //    }
-        //    set
-        //    {
 
-        //        wDriver = value;
-        //    }
+        public IWebDriver driver
+        {
+            get
+            {
+                return wDriver;
+            }
+            set
+            {
 
-        //}
+                wDriver = value;
+            }
+
+        }
 
 
         //Init the driver? I have mine init inside of FrameworkInitilization class and created inside of the [testsetupfixture's setup] method
