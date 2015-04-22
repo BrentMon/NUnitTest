@@ -14,23 +14,31 @@ namespace UnitTestProject2
     {
 
         private IWebDriver driver;
+        private string browser;
         
         //class constructor
         public TestSet_Amazon()
         {
-         //   FrameworkInitilization framework = new FrameworkInitilization();
+                     //create the driver
+           // FrameworkInitilization chrome = new FrameworkInitilization("chrome");
+            //this.driver = chrome.driver;
+            
+            //   FrameworkInitilization framework = new FrameworkInitilization();
         //    this.driver = framework.driver;
+
         }
 
-
+     
             [SetUp]
             public void Setup()
             {
                 //do something before each test
                 //FrameworkInitilization IE = new FrameworkInitilization("IE");
                 //FrameworkInitilization firefox = new FrameworkInitilization("firefox");
-                FrameworkInitilization chrome = new FrameworkInitilization("chrome");
-                this.driver = chrome.driver; 
+               // FrameworkInitilization chrome = new FrameworkInitilization("chrome");
+               // this.driver = chrome.driver; 
+
+                
 
             }
 
@@ -38,18 +46,22 @@ namespace UnitTestProject2
             public void TearDown()
             {
                //do something after each test
-                driver.Quit();
+               // driver.Quit();
             }
 
-        [Test]
+      //  [Test]
         public void Test1()
         {
+            //create the driver
+            FrameworkInitilization Browser = new FrameworkInitilization(browser);
+            this.driver = Browser.driver;
+
             //create page objects
             PageObjects_Amazon amazon = new PageObjects_Amazon(driver);
             PageObjects_CartPage cartPage = new PageObjects_CartPage(driver);
             PageObjects_ProductPage productPage = new PageObjects_ProductPage(driver);
-
-        //build a computer
+        
+            //build a computer
 
             //create a product array that is the same size as the items aray
             DataSheet.sProductArray = new string[DataSheet.sItemsArray.Length];
@@ -83,12 +95,19 @@ namespace UnitTestProject2
                 throw new AssertionException(ex.Message);
             }
 
+            //close the driver
+             driver.Quit();
+
         }
 
 
-        [Test]
+      //  [Test]
         public void Test2()
         {
+            //create the driver
+            FrameworkInitilization Browser = new FrameworkInitilization(browser);
+            this.driver = Browser.driver;
+            
             //create page objects
             PageObjects_Amazon amazon = new PageObjects_Amazon(driver);
             PageObjects_CartPage cartPage = new PageObjects_CartPage(driver);
@@ -169,17 +188,27 @@ namespace UnitTestProject2
 
 
        [Test]
-       [Combinatorial]
+       //[Combinatorial]
         public void Test4(
-        [Values("IE", "chrome")]string a)
+        [Values("IE", "chrome")] string browser,
+        [Values("I", "C")] string text   
+           )
         {
+            //create the driver
+            FrameworkInitilization Browser = new FrameworkInitilization(browser);
+            this.driver = Browser.driver;
+ 
 
             driver.Navigate().GoToUrl("http://www.amazon.com");
 
             PageObjects_Amazon amazon = new PageObjects_Amazon(driver);
 
-            amazon.searchByProduct("keyboard");
+            amazon.searchByProduct(text);
 
+           
+
+            //close the driver
+            driver.Quit();
         }
 
     }

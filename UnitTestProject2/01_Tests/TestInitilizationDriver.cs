@@ -29,13 +29,13 @@ namespace UnitTestProject2
 
         //class constructor with 1 argument
         //choose the browser when the initilization class is created
-        public FrameworkInitilization (String browser)
+        public FrameworkInitilization (string browser)
         {
             if (browser == "IE" || browser == "ie")
             {
                 driver = new InternetExplorerDriver();
-                driver.Manage().Timeouts().SetPageLoadTimeout(new TimeSpan(0, 0, 10));
-                driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(0, 0, 10));
+                driver.Manage().Timeouts().SetPageLoadTimeout(new TimeSpan(0, 0, 25));
+                driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(0, 0, 25));
                 driver.Manage().Window.Maximize();   
             }
             if (browser == "firefox" || browser == "Firefox" || browser == "FireFox")
@@ -50,13 +50,13 @@ namespace UnitTestProject2
             }
             
             //choose chrome if nothing is selcted
-            else
-            {
-                driver = new ChromeDriver();
-                driver.Manage().Timeouts().SetPageLoadTimeout(new TimeSpan(0, 0, 10));
-                driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(0, 0, 10));
-                driver.Manage().Window.Maximize();
-            }      
+            //else
+            //{
+            //    driver = new ChromeDriver();
+            //    driver.Manage().Timeouts().SetPageLoadTimeout(new TimeSpan(0, 0, 10));
+            //    driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(0, 0, 10));
+            //    driver.Manage().Window.Maximize();
+            //}      
         }
 
         //class constructor w/ no arguments
@@ -64,7 +64,7 @@ namespace UnitTestProject2
         public FrameworkInitilization()
         {
             driver = new ChromeDriver();
-            driver.Manage().Timeouts().SetPageLoadTimeout(new TimeSpan(0, 0, 10));
+            driver.Manage().Timeouts().SetPageLoadTimeout(new TimeSpan(0,0,10));
             driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(0, 0, 10));
             driver.Manage().Window.Maximize();
         }
