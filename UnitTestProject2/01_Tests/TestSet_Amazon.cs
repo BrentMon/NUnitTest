@@ -35,8 +35,8 @@ namespace UnitTestProject2
                 //do something before each test
                 //FrameworkInitilization IE = new FrameworkInitilization("IE");
                 //FrameworkInitilization firefox = new FrameworkInitilization("firefox");
-               // FrameworkInitilization chrome = new FrameworkInitilization("chrome");
-               // this.driver = chrome.driver; 
+                //FrameworkInitilization chrome = new FrameworkInitilization("chrome");
+              //  this.driver = chrome.driver; 
 
                 
 
@@ -46,7 +46,7 @@ namespace UnitTestProject2
             public void TearDown()
             {
                //do something after each test
-               // driver.Quit();
+              // driver.Quit();
             }
 
       //  [Test]
@@ -187,7 +187,7 @@ namespace UnitTestProject2
 
 
 
-       [Test]
+       //[Test]
        //[Combinatorial]
         public void Test4(
         [Values("IE", "chrome")] string browser,
@@ -210,6 +210,44 @@ namespace UnitTestProject2
             //close the driver
             driver.Quit();
         }
+
+
+        //[Test]
+        public void Test5  ()
+        {
+            PageObjects_Amazon amazon = new PageObjects_Amazon(driver);
+            //PageObjects_Video video = new PageObjects_Video(driver);
+            PageObjects_SiteDirectory sites = new PageObjects_SiteDirectory(driver);
+
+            amazon.navigateToAmazon();
+            sites.navigateToSiteDirectory();
+            sites.returnLinkCount(sites.UnlimitedInstantVideos);
+            sites.returnLinks(sites.UnlimitedInstantVideos);
+            sites.navigateTo(sites.UnlimitedInstantVideos);
+
+            System.Console.WriteLine(driver.Title);
+
+            DataSheet.ExcelMethod();
+            
+            
+
+
+        }
+
+        [Test]
+        public void Test6()
+        {
+
+
+            DataSheet.ExcelMethod();
+            
+
+
+
+        }
+
+
+
 
     }
 

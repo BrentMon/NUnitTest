@@ -44,3 +44,4 @@ C:\Users\brent.monger\Source\Repos\NUnitTest\UnitTestProject2\obj\Debug\NUnitTes
 C:\Users\brent.monger\Source\Repos\NUnitTest\UnitTestProject2\obj\Debug\UnitTestProject2.dll
 C:\Users\brent.monger\Source\Repos\NUnitTest\UnitTestProject2\obj\Debug\UnitTestProject2.pdb
 C:\Users\brent.monger\Source\Repos\NUnitTest\UnitTestProject2\bin\Debug\chromedriver.exe
+C:\Users\brent.monger\Source\Repos\NUnitTest\UnitTestProject2\obj\Debug\NUnitTest.csproj.ResolveComReference.cache

@@ -21,6 +21,13 @@ namespace UnitTestProject2
 
         //page functions
 
+            public void navigateToAmazon()
+            {
+                driver.Navigate().GoToUrl("http://www.amazon.com");
+            }
+
+
+
             public void navigateToCart()
             {
                 wCartButton().Click();
@@ -39,6 +46,15 @@ namespace UnitTestProject2
 
         //page objects
 
+
+
+        private IWebElement wSiteDirectoryButton ()
+            {
+                By bSiteDirectoryLocator = By.Id("nav-link-shopall");
+                IWebElement wSiteDirectoryButton = driver.FindElement(bSiteDirectoryLocator);
+                return wSiteDirectoryButton;
+            }
+
             private IWebElement wCartButton()
             {
                 By bCartButtonLocator = By.Id("nav-cart");
@@ -52,6 +68,9 @@ namespace UnitTestProject2
             IWebElement wSearchbar = driver.FindElement(bCartButtonLocator);
             return wSearchbar;
         }
+
+
+
 
 
     }

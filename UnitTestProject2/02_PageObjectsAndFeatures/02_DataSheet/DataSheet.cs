@@ -7,6 +7,7 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Support.UI;
+using Microsoft.Office.Interop.Excel;
 
 
 namespace UnitTestProject2
@@ -22,6 +23,8 @@ namespace UnitTestProject2
                 //"Corsair Hydro Series Extreme Performance Liquid CPU Cooler H100i",
                // "MSI X99S SLI PLUS ATX DDR4 NA Motherboards X99S SLI PLUS"                
      };
+
+     //http://www.amazon.com/gp/site-directory/ref=nav_shopall_btn
 
      public static string[] sProductArray;
 
@@ -41,5 +44,30 @@ namespace UnitTestProject2
 
      public static double dPrice;
 
+        
+
+        //Microsoft.Office.Interop.Excel.Application excelapp = new Microsoft.Office.Interop.Excel.Application();
+       
+        public static void ExcelMethod()
+        {
+            string sDatatable = @"C:\Users\brent.monger\Source\Repos\NUnitTest\UnitTestProject2\02_PageObjectsAndFeatures\02_DataSheet\DataTable.xlsx";
+            Microsoft.Office.Interop.Excel.Application excelapp = new Microsoft.Office.Interop.Excel.Application();
+            excelapp.Visible = true;
+            System.Console.WriteLine(sDatatable);
+
+            Workbook workbook = excelapp.Workbooks.Open(sDatatable);
+            Worksheet worksheet = workbook.ActiveSheet;
+            
+            worksheet.Cells[1, 2] = "Updated";
+
+            workbook.Save();
+            excelapp.Quit();
+
+        }
+
+
     }
+
+
+
 }
