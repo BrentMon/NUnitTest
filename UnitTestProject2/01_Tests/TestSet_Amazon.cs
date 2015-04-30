@@ -16,6 +16,7 @@ namespace UnitTestProject2
 
         private IWebDriver driver;
         private string browser;
+        private Microsoft.Office.Interop.Excel.Application excel;
         
         //class constructor
         public TestSet_Amazon()
@@ -24,8 +25,8 @@ namespace UnitTestProject2
            // FrameworkInitilization chrome = new FrameworkInitilization("chrome");
             //this.driver = chrome.driver;
             
-            //   FrameworkInitilization framework = new FrameworkInitilization();
-        //    this.driver = framework.driver;
+           //FrameworkInitilization framework = new FrameworkInitilization();
+          // this.excel = framework.excel;
 
         }
 
@@ -39,7 +40,8 @@ namespace UnitTestProject2
                 //FrameworkInitilization chrome = new FrameworkInitilization("chrome");
               //  this.driver = chrome.driver; 
 
-                
+                FrameworkInitilization framework = new FrameworkInitilization();
+                this.excel = framework.excel;
 
             }
 
@@ -48,6 +50,8 @@ namespace UnitTestProject2
             {
                //do something after each test
               // driver.Quit();
+                excel.Quit();
+                
             }
 
       //  [Test]
@@ -228,20 +232,18 @@ namespace UnitTestProject2
 
             System.Console.WriteLine(driver.Title);
 
-            DataSheet.ExcelMethod();
-            
-            
-
-
         }
 
         [Test]
         public void Test6()
         {
-
-
-            DataSheet.ExcelMethod();
             
+            ExcelClass GlobalSheet = new ExcelClass(excel);
+
+            GlobalSheet.ExcelSetUp();
+            GlobalSheet.ExcelGetData();
+
+          // GlobalSheet.ExcelTearDown();
 
 
 

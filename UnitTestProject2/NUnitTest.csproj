@@ -91,8 +91,10 @@
     <Compile Include="02_PageObjectsAndFeatures\01_PageObjects\PageObjects_ProductPage.cs" />
     <Compile Include="02_PageObjectsAndFeatures\01_PageObjects\PageObjects_SiteDirectory.cs" />
     <Compile Include="02_PageObjectsAndFeatures\01_PageObjects\PageObjects_Video.cs" />
+    <Compile Include="02_PageObjectsAndFeatures\02_DataSheet\DataBaseClass.cs" />
     <Compile Include="02_PageObjectsAndFeatures\02_DataSheet\DataSheet.cs" />
     <Compile Include="01_Tests\TestInitilizationDriver.cs" />
+    <Compile Include="02_PageObjectsAndFeatures\02_DataSheet\ExcelClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

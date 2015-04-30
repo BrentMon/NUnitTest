@@ -7,6 +7,8 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
+using Microsoft.Office.Interop.Excel;
+using Microsoft.CSharp.RuntimeBinder;
 
 
 namespace UnitTestProject2
@@ -27,11 +29,26 @@ namespace UnitTestProject2
     class FrameworkInitilization
     {
         private IWebDriver wDriver;
+        private Microsoft.Office.Interop.Excel.Application excelApp;
+        
+        public IWebDriver driver
+        { 
+            get {return wDriver; }
+            set{ wDriver = value; }
+        }
+        public Microsoft.Office.Interop.Excel.Application excel
+        { 
+            get {return excelApp; }
+            set{ excelApp = value; }
+        }
 
         //class constructor with 1 argument
         //choose the browser when the initilization class is created
         public FrameworkInitilization (string browser)
         {
+
+
+
             if (browser == "IE" || browser == "ie")
             {
                 driver = new InternetExplorerDriver();
@@ -60,6 +77,7 @@ namespace UnitTestProject2
             //}      
         }
 
+        /*
         //class constructor w/ no arguments
         //choose chrome if nothing is selcted
         public FrameworkInitilization()
@@ -69,20 +87,20 @@ namespace UnitTestProject2
             driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(0, 0, 10));
             driver.Manage().Window.Maximize();
         }
+        */
 
-
-        public IWebDriver driver
+        public FrameworkInitilization()
         {
-            get
-            {
-                return wDriver;
-            }
-            set
-            {
-                wDriver = value;
-            }
-
+            excel = new Microsoft.Office.Interop.Excel.Application();
+            //excel.Visible = true;
+            excel.Visible = false;
         }
+
+
+ 
+
+
+
 
         //[SetUp]
         public void Setup()
