@@ -27,7 +27,7 @@ namespace UnitTestProject2
     //you only need one [setupfixture] in your solution. NUnit will find it no matter what .cs file is in and run it first. (a setupfixture is not required)
     //Hoever, you can have multiple [setupfixtures]. I'm not sure yet the order it chooses to run each [setupfixture].
     [SetUpFixture]
-    public class FrameworkInitilization
+    class FrameworkInitilization
     {
         //declaring my driver as static makes it accessable to the [testfixture] class and it's methods
         //static TestRepository testrepository = new TestRepository();
@@ -51,7 +51,12 @@ namespace UnitTestProject2
             //create a new IE instance
             //driver = new InternetExplorerDriver();
             driver = new ChromeDriver();
+
+            driver.Manage().Timeouts().SetPageLoadTimeout(new TimeSpan(0, 0, 10));
+            driver.Manage().Timeouts().ImplicitlyWait(new TimeSpan(0, 0, 10));
+
             driver.Navigate().GoToUrl("http://www.amazon.com");
+
         }
 
         [TearDown]
@@ -95,20 +100,20 @@ namespace UnitTestProject2
 
             
   
-           // [Test]
+            [Test]
             [Category("Null")]
-            public static void AllDinoTests()
+            public void AllDinoTests()
             {
                 System.Console.WriteLine("Dino Driver GO!!");
                 
-                TestRepository_Dino.TestSet_Dinasaur mydino = new TestRepository_Dino.TestSet_Dinasaur();
+                TestRepository_Dino.TestSet_Dinosaur mydino = new TestRepository_Dino.TestSet_Dinosaur();
                 mydino.Dino1();
                 
             }
 
             [Test]
             [Category("Null")]
-            public static void AllAmazonTests()
+            public void AllAmazonTests()
             {
                 System.Console.WriteLine("Amazon Driver GO!!");
                 TestRepository_Amazon.TestSet_Amazon myamazon = new TestRepository_Amazon.TestSet_Amazon();

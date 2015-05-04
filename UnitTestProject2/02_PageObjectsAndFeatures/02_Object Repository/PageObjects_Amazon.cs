@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.IE;
+//using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Support.UI;
 
 namespace UnitTestProject2
@@ -84,9 +84,9 @@ namespace UnitTestProject2
             public static void mAddToCartWithPopup(IWebDriver driver)    {
                 try
                 {
-                    System.Threading.Thread.Sleep(1000);
+                    //System.Threading.Thread.Sleep(1000);
                     ProductPage.wAddToCartButton(driver).Click();
-                    System.Threading.Thread.Sleep(1000);
+                   // System.Threading.Thread.Sleep(1000);
                     ProductPage.ProtectionPopup.wProtectionNoThanks(driver).Click();
                     //set the no thanks button to null for the next item
                     //ProductPage.wProtectionNoThanks(driver).Equals(null);

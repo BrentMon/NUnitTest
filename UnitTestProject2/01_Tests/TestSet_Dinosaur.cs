@@ -31,7 +31,7 @@ namespace UnitTestProject2
         //the [testfixture] class is required for NUnit to identify [test] or [testcase] methods
             [TestFixture]
             [Category("Dino"), Category("Support")]
-            public class TestSet_Dinasaur
+            public class TestSet_Dinosaur
             {
                 //FrameworkInitilization init = new FrameworkInitilization();
 
@@ -48,7 +48,7 @@ namespace UnitTestProject2
             }
 
 
-               // [Test]
+                [Test]
                 public void Dino1()
                 {
                     Collection<string> dinosaurs = new Collection<string>();
