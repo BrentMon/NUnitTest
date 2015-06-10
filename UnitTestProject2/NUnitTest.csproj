@@ -63,7 +63,10 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
     <Reference Include="WebDriver">
       <HintPath>..\packages\Selenium.WebDriver.2.44.0\lib\net40\WebDriver.dll</HintPath>
     </Reference>
@@ -84,6 +87,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="01_Tests\MyClass.cs" />
     <Compile Include="01_Tests\TestSet_Amazon.cs" />
     <Compile Include="02_PageObjectsAndFeatures\01_PageObjects\PageObjects_CartPage.cs" />
     <Compile Include="02_PageObjectsAndFeatures\01_PageObjects\PageObjects_Amazon.cs" />
@@ -91,13 +95,29 @@
     <Compile Include="02_PageObjectsAndFeatures\01_PageObjects\PageObjects_ProductPage.cs" />
     <Compile Include="02_PageObjectsAndFeatures\01_PageObjects\PageObjects_SiteDirectory.cs" />
     <Compile Include="02_PageObjectsAndFeatures\01_PageObjects\PageObjects_Video.cs" />
-    <Compile Include="02_PageObjectsAndFeatures\02_DataSheet\DataBaseClass.cs" />
+    <Compile Include="02_PageObjectsAndFeatures\01_PageObjects\DataBaseClass.cs" />
+    <Compile Include="02_PageObjectsAndFeatures\02_DataSheet\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="02_PageObjectsAndFeatures\02_DataSheet\DataSheet.cs" />
     <Compile Include="01_Tests\TestInitilizationDriver.cs" />
     <Compile Include="02_PageObjectsAndFeatures\02_DataSheet\ExcelClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="02_PageObjectsAndFeatures\02_DataSheet\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="02_PageObjectsAndFeatures\02_DataSheet\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="02_PageObjectsAndFeatures\02_DataSheet\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="02_PageObjectsAndFeatures\02_DataSheet\DataTable.xlsx" />
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />

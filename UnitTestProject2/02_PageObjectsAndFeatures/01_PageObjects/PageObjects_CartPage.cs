@@ -23,6 +23,7 @@ namespace UnitTestProject2
         {
             DataSheet.dPrice = dCartPrice();
             System.Console.WriteLine("Cart Total = " + DataSheet.dPrice);
+            
         }
 
 
@@ -81,12 +82,14 @@ namespace UnitTestProject2
             IWebElement wActiveCart = driver.FindElement(bActiveCartLocator);
             return wActiveCart;
         }
+        
 
         private IWebElement wCartItem(string a)
         {
             By bCartItemLocator = By.LinkText(a);
             IWebElement wCartItem = driver.FindElement(bCartItemLocator);
             return wCartItem;
+            
         }
 
         private IWebElement wCartPrice()
