@@ -17,6 +17,12 @@ namespace UnitTestProject2
          }
 
 
+       public void mymethod()
+        {
+            
+
+        }
+
 
 
     }
