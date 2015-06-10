@@ -11,7 +11,7 @@ namespace UnitTestProject2
 {
     [TestFixture]
     [Category("Amazon")]
-    class TestSet_Amazon
+    class TestSet_Amazon 
     {
 
         private IWebDriver driver;
